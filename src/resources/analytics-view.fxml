@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<TabPane xmlns="http://javafx.com/javafx"
+         xmlns:fx="http://javafx.com/fxml"
+         fx:controller="ui.fx.AnalyticsController">
+
+    <tabs>
+        <Tab text="Type distribution">
+            <AnchorPane>
+                <children>
+                    <PieChart fx:id="pieType" layoutX="10" layoutY="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10"/>
+                </children>
+            </AnchorPane>
+        </Tab>
+
+        <Tab text="Top Range">
+            <AnchorPane>
+                <children>
+                    <BarChart fx:id="barRange" title="Top by Range" prefHeight="400" prefWidth="600" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+                        <xAxis>
+                            <CategoryAxis fx:id="rangeXAxis" label="Aircraft ID"/>
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis fx:id="rangeYAxis" label="Range"/>
+                        </yAxis>
+                    </BarChart>
+                </children>
+            </AnchorPane>
+        </Tab>
+
+        <Tab text="Top Capacity">
+            <AnchorPane>
+                <children>
+                    <BarChart fx:id="barCapacity" title="Top by Capacity" prefHeight="400" prefWidth="600" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+                        <xAxis>
+                            <CategoryAxis fx:id="capXAxis" label="Aircraft ID"/>
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis fx:id="capYAxis" label="Capacity"/>
+                        </yAxis>
+                    </BarChart>
+                </children>
+            </AnchorPane>
+        </Tab>
+
+        <Tab text="FlightHours by Year">
+            <AnchorPane>
+                <children>
+                    <LineChart fx:id="lineHours" title="Flight Hours by Year" prefHeight="400" prefWidth="600" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+                        <xAxis>
+                            <CategoryAxis fx:id="yearXAxis" label="Year"/>
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis fx:id="hoursYAxis" label="Total Flight Hours"/>
+                        </yAxis>
+                    </LineChart>
+                </children>
+            </AnchorPane>
+        </Tab>
+    </tabs>
+</TabPane>

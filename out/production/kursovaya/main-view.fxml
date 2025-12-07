@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.fx.MainController">
+
+    <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
+    <top>
+        <VBox spacing="10" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <!-- Ряд 1: кнопки -->
+            <HBox spacing="10">
+                <Button fx:id="btnAdd" text="Add Aircraft"/>
+                <Button fx:id="btnDelete" text="Delete"/>
+                <Button fx:id="btnRefresh" text="Refresh"/>
+                <Button fx:id="btnAnalytics" text="Analytics"/>
+            </HBox>
+
+            <!-- Ряд 2: поиск и фильтры -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Search:"/>
+                <TextField fx:id="searchField"
+                           promptText="Search by model, manufacturer, ID..."/>
+
+                <Label text="Type:"/>
+                <ComboBox fx:id="typeFilter"/>
+
+                <Button text="Clear" onAction="#onClearFilters"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- ЦЕНТР: таблица -->
+    <center>
+        <TableView fx:id="tableAircraft">
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+    </center>
+
+</BorderPane>
